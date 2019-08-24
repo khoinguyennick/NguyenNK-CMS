@@ -24,7 +24,6 @@ public class AjaxContent {
     @Autowired
     private MemberService memberService;
 
-
     @GetMapping("/list")
     public String list(ModelMap modelMap, Principal principal) {
         Member member = memberService.getMemberByUsername(principal.getName());

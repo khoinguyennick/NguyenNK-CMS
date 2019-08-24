@@ -18,7 +18,7 @@ public class ContentRepoBean implements ContentRepo {
     @Override
     public List<Content> getContentListOfAuthor(long authorID) {
         Session session = sessionFactory.getCurrentSession();
-        Query<Content> query = session.createQuery("FROM Content c WHERE c.authorID = ?1", Content.class);
+        Query<Content> query = session.createQuery("FROM Content WHERE authorID = ?1", Content.class);
         query.setParameter(1, authorID);
         return query.getResultList();
     }
@@ -26,8 +26,8 @@ public class ContentRepoBean implements ContentRepo {
     @Override
     public List<Content> searchContent(long authorID, String keyword) {
         Session session = sessionFactory.getCurrentSession();
-        Query<Content> query = session.createQuery("FROM Content c WHERE c.authorID = ?1 " +
-                "AND (c.title LIKE ?2 OR c.brief LIKE ?3)", Content.class);
+        Query<Content> query = session.createQuery("FROM Content WHERE authorID = ?1 " +
+                "AND (title LIKE ?2 OR brief LIKE ?3)", Content.class);
         query.setParameter(1, authorID);
         query.setParameter(2, "%" + keyword + "%");
         query.setParameter(3, "%" + keyword + "%");
