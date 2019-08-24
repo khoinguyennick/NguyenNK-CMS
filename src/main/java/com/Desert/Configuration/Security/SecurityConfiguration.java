@@ -61,6 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login")
+                .permitAll()
                 .and()
                 .rememberMe()
                 .key("NguyenNKCMS")
