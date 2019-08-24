@@ -23,18 +23,15 @@ public class AjaxContent {
     private ContentService contentService;
     @Autowired
     private MemberService memberService;
-    private long authorID = 0;
+
 
     @GetMapping("/list")
     public String list(ModelMap modelMap, Principal principal) {
-        if (authorID == 0) {
-            Member member = memberService.getMemberByUsername(principal.getName());
-            this.authorID = member.getId();
-        }
-
+        Member member = memberService.getMemberByUsername(principal.getName());
+        long authorID = member.getId();
         List<Content> contentList = contentService.getContentListOfAuthor(authorID);
-        modelMap.addAttribute("contentList", contentList);
 
+        modelMap.addAttribute("contentList", contentList);
         return "ajax-list";
     }
 

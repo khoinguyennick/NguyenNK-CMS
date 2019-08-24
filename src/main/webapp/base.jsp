@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="w-100">
-    <tiles:insertAttribute name="topbar"/>
+    <tiles:insertAttribute name="navbar"/>
     <div class="position-fixed row w-100 mx-0 pt-5 h-100" style="left: 0; top: 0">
         <tiles:insertAttribute name="sidebar"/>
         <div class="col-10" id="content">

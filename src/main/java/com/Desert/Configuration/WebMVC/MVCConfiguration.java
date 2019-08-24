@@ -103,11 +103,6 @@ public class MVCConfiguration implements WebMvcConfigurer {
         return viewResolver;
     }
 
-    @Bean
-    public Validator validator() {
-        return new LocalValidatorFactoryBean();
-    }
-
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.tiles().viewClass(TilesView.class);

@@ -5,11 +5,12 @@
 
 <tiles-definitions>
     <definition name="base" template="/base.jsp">
-        <put-attribute name="topbar" value="/topbar.jsp"/>
+        <put-attribute name="navbar" value="/navbar.jsp"/>
         <put-attribute name="sidebar" value="/sidebar.jsp"/>
         <put-attribute name="title" value=""/>
         <put-attribute name="content" value=""/>
     </definition>
+
     <definition name="home" extends="base">
         <put-attribute name="title" value="Home"/>
         <put-attribute name="content" value="/home.jsp"/>
@@ -26,6 +27,7 @@
         <put-attribute name="title" value="Form Content"/>
         <put-attribute name="content" value="/form.jsp"/>
     </definition>
+
     <definition name="login" template="/login.jsp"/>
     <definition name="register" template="/register.jsp"/>
 
