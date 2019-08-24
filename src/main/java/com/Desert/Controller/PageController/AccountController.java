@@ -74,14 +74,6 @@ public class AccountController {
         member.setAuthorities(Collections.singletonList(new Authority(1, "AUTHOR")));
         memberService.insertMember(member);
 
-        Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(
-                        member.getEmail(),
-                        member.getPassword()
-                ));
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-
         return "redirect:/login";
     }
 
