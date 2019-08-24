@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="base" template="/base.jsp">
+        <put-attribute name="topbar" value="/topbar.jsp"/>
+        <put-attribute name="sidebar" value="/sidebar.jsp"/>
+        <put-attribute name="title" value=""/>
+        <put-attribute name="content" value=""/>
+    </definition>
+    <definition name="home" extends="base">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="content" value="/home.jsp"/>
+    </definition>
+    <definition name="profile" extends="base">
+        <put-attribute name="title" value="Profile"/>
+        <put-attribute name="content" value="/profile.jsp"/>
+    </definition>
+    <definition name="list" extends="base">
+        <put-attribute name="title" value="View Content"/>
+        <put-attribute name="content" value="/list.jsp"/>
+    </definition>
+    <definition name="form" extends="base">
+        <put-attribute name="title" value="Form Content"/>
+        <put-attribute name="content" value="/form.jsp"/>
+    </definition>
+    <definition name="login" template="/login.jsp"/>
+    <definition name="register" template="/register.jsp"/>
+
+    <definition name="ajax-list" template="/list.jsp"/>
+    <definition name="ajax-form" template="/form.jsp"/>
+    <definition name="ajax-profile" template="/profile.jsp"/>
+</tiles-definitions>
