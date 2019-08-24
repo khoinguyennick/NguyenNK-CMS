@@ -2,26 +2,29 @@ package com.Desert.Model;
 
 
 import com.Desert.Entity.Member;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 public class MemberModel {
 
     @NotNull
-    @Length(min = 3, max = 30)
+    @Length(min = 3, max = 30, message = "First Name's length must be between 3 and 30!")
     private String firstName;
     @NotNull
-    @Length(min = 3, max = 30)
+    @Length(min = 3, max = 30, message = "Last Name's length must be between 3 and 30!")
     private String lastName;
     @NotNull
+    @Email(message = "Invalid email!")
     private String email;
     @NotNull
-    @Length(min = 9, max = 13)
+    @Length(min = 9, max = 13, message = "Phone number must be 9-13 digits!")
     private String phone;
-    @Max(200)
+    @Length(max = 200, message = "Description is too long (maximum 200 characters)!")
     private String description;
     private Timestamp createdDate;
 

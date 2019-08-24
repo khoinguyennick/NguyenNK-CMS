@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h1 class="mt-4">Edit Profile</h1>
 <div class="mx-auto border rounded">
     <div class="p-2 bg-light border-bottom">Profile Form Elements</div>
@@ -33,7 +34,9 @@
             <button type="submit" class="btn btn-outline-dark mr-3">Submit</button>
             <button id="resetProfileButton" type="reset" class="btn btn-outline-dark">Reset</button>
         </div>
-        <h3 class="mt-3 text-primary">${notification}</h3>
+        <c:if test="${notification != null}">
+            <h3 class="mt-3 text-primary">${notification}</h3>
+        </c:if>
     </form:form>
 </div>
 

@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: desert
@@ -32,6 +33,9 @@
                     <input type="checkbox" class="form-check-input" name="remember-me"> Remember Me
                 </div>
                 <button type="submit" class="btn btn-success d-block mx-auto my-3 w-100">Login</button>
+                <c:if test="${param.error != null}">
+                    <span class="text-danger">Invalid Email or Password!</span><br>
+                </c:if>
                 <a class="text-decoration-none" href="${pageContext.request.contextPath}/register">Go to Register</a>
             </form:form>
         </div>

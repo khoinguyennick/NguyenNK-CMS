@@ -8,14 +8,14 @@ import javax.validation.constraints.NotNull;
 public class ContentModel {
 
     @NotNull
-    @Length(min = 10, max = 200)
+    @Length(min = 10, max = 200, message = "Title's length must be between 10 and 200!")
     @UnusedTitle
     private String title;
     @NotNull
-    @Length(min = 30, max = 150)
+    @Length(min = 30, max = 150, message = "Brief's length must be between 30 and 150!")
     private String brief;
     @NotNull
-    @Length(min = 50, max = 1000)
+    @Length(min = 50, max = 1000, message = "Content's length must be between 30 and 1000!")
     private String content;
 
     public String getTitle() {

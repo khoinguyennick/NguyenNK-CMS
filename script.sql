@@ -22,7 +22,7 @@ create table Member
     password    varchar(60) not null,
     phone       varchar(16),
     email       varchar(32) not null,
-    description nvarchar(64),
+    description nvarchar(200),
     createdDate datetime    not null,
     updatedTime datetime    not null
 )
